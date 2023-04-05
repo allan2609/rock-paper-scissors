@@ -9,8 +9,21 @@
 
   </body>
   <script>
-//Get computer's choice
-//Get players's choice
+    //Create array of possible choices
+    const myArray = ['Rock', 'Paper', 'Scissors'];
+
+    //Create function to get computer's choice
+    function getComputerChoice() {
+      return myArray[Math.floor(Math.random() * myArray.length)];
+    }
+
+    let computerSelection = getComputerChoice();
+
+    console.log(computerSelection);
+
+    //Get players's choice
+    let playerSelection = prompt("Rock, paper, or scissors?");
+
 //If player made the same choice as computer, then print "Draw"
 //If player has rock and computer has scissors OR player has paper and computer has rock OR player has scissors and computer has paper, then print "You win"
 //Any other case, print "You lose"
