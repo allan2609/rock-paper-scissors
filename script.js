@@ -26,7 +26,6 @@ function playRound(playerSelection, computerSelection) {
   }
 };
 
-//Display the results of each round
 //Display the winner at the end.
 function game() {
   for (let i = 0; i < 5; i++) {
