@@ -25,9 +25,17 @@ function playRound(playerSelection, computerSelection) {
   }
 };
 
-//Display the winner at the end.
 function game() {
-  for (let i = 0; i < 5; i++) {
+  //Save results into array - console.log it
+  //Get most frequent result - console.log it and then return it
+  //const results = [
+
+  for (let i = 0; i < 2; i++) {
     playRound(getPlayerChoice(), getComputerChoice());
+
+    // Push results into result array
   }
+
+  // Console log result, return result
+  //return
 };
