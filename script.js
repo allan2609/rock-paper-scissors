@@ -12,8 +12,6 @@ function playRound(playerSelection, computerSelection) {
   let selection1 = playerSelection.toLowerCase();
   let selection2 = computerSelection.toLowerCase();
 
-  console.log(selection1, selection2);
-
   if (selection1 === selection2) {
     console.log(`Draw! Both chose ${selection1}.`);
   }
