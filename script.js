@@ -5,7 +5,8 @@ function getComputerChoice() {
 };
 
 function getPlayerChoice() {
-  return "Rock";
+  const playerChoice = prompt("Rock, paper or scissors?");
+  return playerChoice;
 };
 
 function playRound(playerSelection, computerSelection) {
@@ -25,12 +26,10 @@ function playRound(playerSelection, computerSelection) {
   }
 };
 
-console.log(playRound(getPlayerChoice(), getComputerChoice()));
-
 //Display the results of each round
 //Display the winner at the end.
 function game() {
   for (let i = 0; i < 5; i++) {
-    playRound(playerSelection, getComputerChoice());
+    playRound(getPlayerChoice(), getComputerChoice());
   }
 };
