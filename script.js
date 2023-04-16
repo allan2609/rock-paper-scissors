@@ -14,28 +14,36 @@ function playRound(playerSelection, computerSelection) {
 
   if (selection1 === selection2) {
     console.log(`Draw! Both chose ${selection1}.`);
-  }
-  else if (selection1 === "rock" && selection2 === "scissors" || selection1 === "paper" && selection2 === "rock" || selection1 === "scissors" && selection2 === "paper") {
+  } else if (selection1 === "rock" && selection2 === "scissors" || selection1 === "paper" && selection2 === "rock" || selection1 === "scissors" && selection2 === "paper") {
     console.log(`You win! ${selection1} beats ${selection2}.`);
-  }
-  else if (selection1 === "scissors" && selection2 === "rock" || selection1 === "rock" && selection2 === "paper" || selection1 === "paper" && selection2 === "scissors") {
+    return "player";
+  } else if (selection1 === "scissors" && selection2 === "rock" || selection1 === "rock" && selection2 === "paper" || selection1 === "paper" && selection2 === "scissors") {
     console.log(`You lose! ${selection2} beats ${selection1}.`);
+    return "computer";
   } else {
     console.log("Error");
   }
 };
 
 function game() {
-  //Save results into array - console.log it
-  //Get most frequent result - console.log it and then return it
-  //const results = [
+  let playerScore = 0;
+  let computerScore = 0;
 
   for (let i = 0; i < 2; i++) {
-    playRound(getPlayerChoice(), getComputerChoice());
+    const oneRoundWinner = playRound(getPlayerChoice(), getComputerChoice());
 
-    // Push results into result array
+    if (oneRoundWinner === "player") {
+      playerScore++;
+    } else if (oneRoundWinner === "computer") {
+      computerScore++;
+    } else {
+      console.log("draw");
+    }
   }
 
+  console.log(`Player score: ${playerScore}`);
+  console.log(`Computer score: ${computerScore}`);
+  
   // Console log result, return result
   //return
 };
