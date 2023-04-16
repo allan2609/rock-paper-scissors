@@ -28,8 +28,9 @@ function playRound(playerSelection, computerSelection) {
 function game() {
   let playerScore = 0;
   let computerScore = 0;
+  const numberOfRounds = 5;
 
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < numberOfRounds; i++) {
     const oneRoundWinner = playRound(getPlayerChoice(), getComputerChoice());
 
     if (oneRoundWinner === "player") {
@@ -43,7 +44,15 @@ function game() {
 
   console.log(`Player score: ${playerScore}`);
   console.log(`Computer score: ${computerScore}`);
-  
-  // Console log result, return result
-  //return
+  getGameWinner(playerScore, computerScore, numberOfRounds);
+};
+
+function getGameWinner(playerScore, computerScore, numberOfRounds) {
+  if (playerScore > computerScore) {
+    alert(`You won ${playerScore} rounds out of ${numberOfRounds}.`)
+  } else if (computerScore > playerScore) {
+    alert(`Computer won with ${computerScore} rounds out of ${numberOfRounds}.`)
+  } else {
+    alert(`Draw! Both won ${playerScore} rounds.`)
+  }
 };
