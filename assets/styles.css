@@ -1,0 +1,73 @@
+body, html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: helvetica, sans-serif;
+  font-size: 1em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("./background.jpg");
+
+  /* Add the blur effect */
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Without z-index the background seems to cover the content*/
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+h1 {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 2.5em;
+  border: 3px solid #f1f1f1;
+  border-radius: 0.5em;
+  /*position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  */
+  padding: 0.75em;
+  margin: 1.5em;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.player-choice {
+  font-size: 1em;
+  width: 8em;
+  height: 2.3em;
+  border-radius: 0.25em;
+}
