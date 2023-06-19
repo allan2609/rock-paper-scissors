@@ -16,13 +16,8 @@ scissors.addEventListener("click", () => {
 });
 
 function getComputerChoice() {
-  console.log("function getComputerChoice started");
   const choices = ["rock", "paper", "scissors"];
   return choices[Math.floor(Math.random() * choices.length)];
-};
-
-function getPlayerChoice() {
-  console.log("function getPlayerChoice started");
 };
 
 function playRound(selection1, selection2) {
