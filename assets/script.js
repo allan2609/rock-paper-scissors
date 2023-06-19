@@ -18,10 +18,6 @@ function getPlayerChoice() {
 
 };
 
-//  const playerChoice = document.addEventListener;
-//  return playerChoice.toLowerCase();
-//};
-
 function playRound(selection1, selection2) {
   if (selection1 === selection2) {
     results.textContent = (`Draw! Both chose ${selection1}.`);
