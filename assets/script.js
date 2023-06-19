@@ -1,21 +1,35 @@
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+const results = document.querySelector(".results");
+
+rock.addEventListener("click", playRound("rock", getComputerChoice()));
+paper.addEventListener("click", playRound("paper", getComputerChoice()));
+scissors.addEventListener("click", playRound("scissors", getComputerChoice()));
+
 function getComputerChoice() {
+  console.log("function getComputerChoice started");
   const choices = ["rock", "paper", "scissors"];
   return choices[Math.floor(Math.random() * choices.length)];
 };
 
 function getPlayerChoice() {
-  const playerChoice = prompt("Rock, paper or scissors?");
-  return playerChoice.toLowerCase();
+  console.log("function getPlayerChoice started");
+
 };
+
+//  const playerChoice = document.addEventListener;
+//  return playerChoice.toLowerCase();
+//};
 
 function playRound(selection1, selection2) {
   if (selection1 === selection2) {
-    console.log(`Draw! Both chose ${selection1}.`);
+    results.textContent = (`Draw! Both chose ${selection1}.`);
   } else if (selection1 === "rock" && selection2 === "scissors" || selection1 === "paper" && selection2 === "rock" || selection1 === "scissors" && selection2 === "paper") {
-    console.log(`You win! ${selection1} beats ${selection2}.`);
+    results.textContent = (`You win! ${selection1} beats ${selection2}.`);
     return "player";
   } else if (selection1 === "scissors" && selection2 === "rock" || selection1 === "rock" && selection2 === "paper" || selection1 === "paper" && selection2 === "scissors") {
-    console.log(`You lose! ${selection2} beats ${selection1}.`);
+    results.textContent = (`You lose! ${selection2} beats ${selection1}.`);
     return "computer";
   } else {
     console.log("Error");
@@ -54,4 +68,4 @@ function getGameWinner(playerScore, computerScore, numberOfRounds) {
   }
 };
 
-game();
+//game();

@@ -15,22 +15,13 @@ body {
 }
 
 .bg-image {
-  /* The image used */
   background-image: url("./background.jpg");
-
-  /* Add the blur effect */
   filter: blur(6px);
   -webkit-filter: blur(6px);
-
-  /* Full height */
   height: 100%;
-
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
-  /* Without z-index the background seems to cover the content*/
   position: fixed;
   top: 0;
   height: 100vh;
@@ -70,4 +61,13 @@ h1 {
   width: 8em;
   height: 2.3em;
   border-radius: 0.25em;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  color: #f1f1f1;
 }
