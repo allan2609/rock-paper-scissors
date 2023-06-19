@@ -2,6 +2,11 @@ const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 const results = document.querySelector(".results");
+const playerWinCount = document.querySelector(".player-count");
+const computerWinCount = document.querySelector(".computer-count");
+let playerScore = 0;
+let computerScore = 0;
+const numberOfRounds = 5;
 
 rock.addEventListener("click", () => {
   playRound("rock", getComputerChoice())
@@ -21,21 +26,22 @@ function getComputerChoice() {
 };
 
 function playRound(selection1, selection2) {
-  console.log("function playRound started");
   if (selection1 === selection2) {
     results.textContent = (`Draw! Both chose ${selection1}.`);
     results.style.visibility = "visible";
   } else if (selection1 === "rock" && selection2 === "scissors" || selection1 === "paper" && selection2 === "rock" || selection1 === "scissors" && selection2 === "paper") {
     results.textContent = (`You win! ${selection1} beats ${selection2}.`);
     results.style.visibility = "visible";
-    return "player";
+    playerScore++;
   } else if (selection1 === "scissors" && selection2 === "rock" || selection1 === "rock" && selection2 === "paper" || selection1 === "paper" && selection2 === "scissors") {
     results.textContent = (`You lose! ${selection2} beats ${selection1}.`);
     results.style.visibility = "visible";
-    return "computer";
+    computerScore++;
   } else {
     console.log("Error");
   }
+  playerWinCount.textContent = (`Player score: ${playerScore}`);
+  computerWinCount.textContent = (`Computer score: ${computerScore}`);
 };
 
 function game() {
@@ -45,7 +51,7 @@ function game() {
   const numberOfRounds = 5;
 
   for (let i = 0; i < numberOfRounds; i++) {
-    const oneRoundWinner = playRound(getPlayerChoice(), getComputerChoice());
+    const oneRoundWinner = playRound();
 
     if (oneRoundWinner === "player") {
       playerScore++;
