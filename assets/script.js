@@ -29,14 +29,17 @@ function playRound(selection1, selection2) {
   if (selection1 === selection2) {
     results.textContent = (`Draw! Both chose ${selection1}.`);
     results.style.visibility = "visible";
+    checkScore();
   } else if (selection1 === "rock" && selection2 === "scissors" || selection1 === "paper" && selection2 === "rock" || selection1 === "scissors" && selection2 === "paper") {
     results.textContent = (`You win! ${selection1} beats ${selection2}.`);
     results.style.visibility = "visible";
     playerScore++;
+    checkScore();
   } else if (selection1 === "scissors" && selection2 === "rock" || selection1 === "rock" && selection2 === "paper" || selection1 === "paper" && selection2 === "scissors") {
     results.textContent = (`You lose! ${selection2} beats ${selection1}.`);
     results.style.visibility = "visible";
     computerScore++;
+    checkScore();
   } else {
     console.log("Error");
   }
@@ -44,38 +47,20 @@ function playRound(selection1, selection2) {
   computerWinCount.textContent = (`Computer score: ${computerScore}`);
 };
 
-function game() {
-  console.log("function game started");
-  let playerScore = 0;
-  let computerScore = 0;
-  const numberOfRounds = 5;
-
-  for (let i = 0; i < numberOfRounds; i++) {
-    const oneRoundWinner = playRound();
-
-    if (oneRoundWinner === "player") {
-      playerScore++;
-    } else if (oneRoundWinner === "computer") {
-      computerScore++;
-    } else {
-      console.log("draw");
-    }
-  }
-
-  console.log(`Player score: ${playerScore}`);
-  console.log(`Computer score: ${computerScore}`);
-  getGameWinner(playerScore, computerScore, numberOfRounds);
-};
-
-function getGameWinner(playerScore, computerScore, numberOfRounds) {
-  console.log("function getGameWinner started");
-  if (playerScore > computerScore) {
-    alert(`You won ${playerScore} rounds out of ${numberOfRounds}.`)
-  } else if (computerScore > playerScore) {
-    alert(`Computer won with ${computerScore} rounds out of ${numberOfRounds}.`)
-  } else {
-    alert(`Draw! Both won ${playerScore} rounds.`)
+function checkScore() {
+  if (playerScore === 5) {
+    alert ("You win!");
+    resetGame();
+  } if (computerScore === 5) {
+    alert ("You lose!");
+    resetGame();
   }
 };
 
-//game();
+function resetGame() {
+  playerScore = 0;
+  computerScore = 0;
+  playerWinCount.textContent = ("");
+  computerWinCount.textContent = ("");
+  results.style.visibility = "hidden";
+};
