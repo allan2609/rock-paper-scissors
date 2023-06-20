@@ -24,7 +24,6 @@ body {
   background-size: cover;
   position: fixed;
   top: 0;
-  height: 100vh;
   width: 100vw;
   z-index: -1;
 }
@@ -86,4 +85,61 @@ h1 {
   width: 80%;
   justify-content: space-between;
   margin: 2em;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 25%;
+  background: #f8f8f8;
+  padding: 1.5em;
+  gap: 1em;
+  border-radius: 0.5em;
+  z-index: 99;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+  font-size: 1.75em;
+  margin-top: -0.5em;
+  font-weight: 800;
+}
+
+.hidden-modal { 
+ display: none; 
+}
+
+.close-modal {
+  background: #f1f1f1;
+  border-radius: 0.25em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.75em;
+  width: 8em;
+  font-size: 1.25em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.close-modal:hover {
+  background-color: lightgrey;
+}
+
+.blur-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.hidden-blur {
+  display: none;
 }

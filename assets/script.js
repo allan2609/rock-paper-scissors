@@ -7,6 +7,12 @@ const computerWinCount = document.querySelector(".computer-count");
 let playerScore = 0;
 let computerScore = 0;
 const numberOfRounds = 5;
+const modalTitle = document.querySelector(".modal-title");
+const modalContent = document.querySelector(".modal-content");
+const modalBody = document.querySelector(".modal-body");
+const openModal = document.querySelector(".open-modal");
+const closeModal = document.querySelector(".close-modal");
+const blurBg = document.querySelector(".blur-bg");
 
 rock.addEventListener("click", () => {
   playRound("rock", getComputerChoice())
@@ -49,11 +55,13 @@ function playRound(selection1, selection2) {
 
 function checkScore() {
   if (playerScore === 5) {
-    alert ("You win!");
-    resetGame();
+    modalTitle.textContent = ("You won!");
+    modalBody.textContent = (`You won ${playerScore} rounds against computer's ${computerScore}. Play again?`);
+    showResults();
   } if (computerScore === 5) {
-    alert ("You lose!");
-    resetGame();
+    modalTitle.textContent = ("You lose!");
+    modalBody.textContent = (`Computer won ${computerScore} rounds against your ${playerScore}. Play again?`);
+    showResults();
   }
 };
 
@@ -64,3 +72,23 @@ function resetGame() {
   computerWinCount.textContent = ("");
   results.style.visibility = "hidden";
 };
+
+function showResults() {
+  modalContent.classList.remove("hidden-modal");
+  blurBg.classList.remove("hidden-blur");
+};
+
+let closeModalFunction = function () {
+  modalContent.classList.add("hidden-modal")
+  blurBg.classList.add("hidden-blur")
+  resetGame();
+};
+
+blurBg.addEventListener("click", closeModalFunction);
+closeModal.addEventListener("click", closeModalFunction);
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && !modalContent.classList.contains("hidden")) {
+        closeModalFunction();
+    }
+});
