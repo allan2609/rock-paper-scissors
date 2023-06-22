@@ -37,7 +37,8 @@ h1 {
   border: 0.15rem solid #f1f1f1;
   border-radius: 0.75rem;
   padding: 1.25rem;
-  margin: 0.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
   min-width: 100%;
   text-align: center;
 }
@@ -70,6 +71,7 @@ h1 {
   font-size: 1.5rem;
   color: #f1f1f1;
   visibility: hidden;
+  text-align: center;
 }
 
 .container {
@@ -104,21 +106,29 @@ h1 {
   align-items: center;
   position: absolute;
   top: 25%;
-  background: #f8f8f8;
-  padding: 2rem;
-  gap: 1rem;
+  background-color: rgba(230,243,255);
+  background-color: rgba(230,243,255, 0.7);
+  padding: 1rem;
+  gap: 0.5rem;
   border: 0.1rem solid #22201b;
-  border-radius: 0.5rem;
+  border-radius: 1.25rem;
   z-index: 99;
+  max-width: 80%;
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   color: #000;
-  font-size: 1.75rem;
+  font-size: 2rem;
   margin-top: -0.75rem;
   font-weight: 800;
+}
+
+.modal-body {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .hidden-modal { 
@@ -131,11 +141,12 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2.25rem;
-  width: 10rem;
-  font-size: 1.25rem;
+  height: 3rem;
+  width: 14rem;
+  max-width: 100%;
+  font-size: 1.5rem;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .close-modal:hover {
