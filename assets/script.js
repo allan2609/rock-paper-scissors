@@ -37,12 +37,12 @@ function playRound(selection1, selection2) {
     results.style.visibility = "visible";
     checkScore();
   } else if (selection1 === "rock" && selection2 === "scissors" || selection1 === "paper" && selection2 === "rock" || selection1 === "scissors" && selection2 === "paper") {
-    results.textContent = (`You win! ${selection1} beats ${selection2}.`);
+    results.textContent = ("You win! ")+ (`${selection1}`).charAt(0).toUpperCase() + (`${selection1}`).slice(1) + " beats " + (`${selection2}.`);
     results.style.visibility = "visible";
     playerScore++;
     checkScore();
   } else if (selection1 === "scissors" && selection2 === "rock" || selection1 === "rock" && selection2 === "paper" || selection1 === "paper" && selection2 === "scissors") {
-    results.textContent = (`You lose! ${selection2} beats ${selection1}.`);
+    results.textContent = ("You lose! ")+ (`${selection2}`).charAt(0).toUpperCase() + (`${selection2}`).slice(1) + " beats " + (`${selection1}.`);
     results.style.visibility = "visible";
     computerScore++;
     checkScore();
