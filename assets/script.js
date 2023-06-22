@@ -78,7 +78,7 @@ function showResults() {
   blurBg.classList.remove("hidden-blur");
 };
 
-let closeModalFunction = function () {
+function closeModalFunction() {
   modalContent.classList.add("hidden-modal")
   blurBg.classList.add("hidden-blur")
   resetGame();
